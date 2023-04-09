@@ -1,0 +1,51 @@
+In this notebook, we will be creating interactive maps using the leaflet library in R.
+
+The *leaflet* library is a powerful tool for creating interactive maps in R. It allows you to easily create maps with markers, popups, and other features. In this notebook, we will be creating a simple map of the United States with markers for several major cities.
+
+First, let's start by installing and loading the necessary library: *leaflet*. You can do this by running the following code:
+
+
+```{r}
+# load the library
+library("leaflet")
+```
+
+Next, we will create a simple map of the United States using the *leaflet* function. You can do this by running the following code:
+
+
+```{r}
+# Create the map
+map <- leaflet() %>% addTiles() %>% setView(-96, 37.8, 4)
+```
+
+The *leaflet* function creates an empty map. The *addTiles* function adds a tile layer to the map, and the *setView* function sets the initial view of the map. The three arguments for the *setView* function are the **longitude**, **latitude**, and **zoom level** of the initial view.
+
+Now, we can add markers to the map for several major cities. You can do this by running the following code:
+
+
+```{r}
+# Add markers for several major cities
+map <- addMarkers(map, lng = -74.0059, lat = 40.7128, 
+                 popup = "New York City")
+map <- addMarkers(map, lng = -118.2437, lat = 34.0522, 
+                 popup = "Los Angeles")
+map <- addMarkers(map, lng = -87.6298, lat = 41.8781, 
+                 popup = "Chicago")
+map <- addMarkers(map, lng = -95.3698, lat = 29.7604, 
+                 popup = "Houston")
+```
+
+The **addMarkers** function takes three arguments: *the map object*, *the longitude*, and *latitude* of the marker, and *the popup text* for the marker.
+
+Finally, we can display the map using the **show** function. You can do this by running the following code:
+
+
+```{r}
+# Show the map
+show(map)
+```
+
+
+That's it! We've just created an interactive map of the United States with markers for several major cities using the leaflet library in R. 
+
+The leaflet library is a powerful tool for creating interactive maps, and it allows you to easily add markers, popups, and other features to your maps. I hope you found this notebook helpful and you can start creating your own interactive maps with leaflet. Keep in mind that this is just a simple example and there are many other features and options that you can explore with leaflet.
